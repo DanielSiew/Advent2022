@@ -1,3 +1,5 @@
+# Part 2
+
 file = open("day 2.txt", "r")
 text = file.readlines()
 
