@@ -3,29 +3,22 @@
 file = open("day 1.txt", "r")
 text = file.readlines()
 
-elfCounter = 1
-elfCalories = {'1': []}
-totalCalories = {'1': 0}
+elfCalories = [0]
+index = 0
 
 for line in text:
     lines = line.strip()
 
     if lines != "":
-        elfCalories[str(elfCounter)].append(int(lines))
+        elfCalories[index] += int(lines)
     else:
-        elfCounter += 1
-        elfCalories[str(elfCounter)] = []
-        totalCalories[str(elfCounter)] = 0
-
-for key in elfCalories:
-    for calories in elfCalories[key]:
-        totalCalories[key] += int(calories)
+        index += 1
+        elfCalories.append(0)
 
 highestThree = 0
+elfCalories.sort(reverse=True)
 
-sorted_totalCalories = dict(sorted(totalCalories.items(), key=lambda x:x[1], reverse=True)) # NOQA
-key = list(sorted_totalCalories.keys())
 for counter in range(3):
-    highestThree += sorted_totalCalories[key[counter]]
+    highestThree += elfCalories[counter]
 
 print(highestThree)
