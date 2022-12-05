@@ -7,11 +7,12 @@ group = []
 
 for line in text:
     lines = line.strip()
-    rucksack = lines
 
-    group.append(rucksack)
+    # adds rucksack (current line) into the group
+    group.append(lines)
     counterGroup += 1
 
+    # once the group size is 3, find common character in all 3 rucksacks of the group then resets group
     if counterGroup == 3:
         common_itemType = list(set(group[0]).intersection(group[1], group[2]))[0]
 
