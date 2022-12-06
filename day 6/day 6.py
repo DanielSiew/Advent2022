@@ -9,6 +9,7 @@ def part_one():
             break
         else:
             character_counter += 1
+    return character_counter
 
 
 def part_two():
@@ -18,6 +19,7 @@ def part_two():
             break
         else:
             character_counter += 1
+    return character_counter
 
 
 print(part_one(),part_two())
