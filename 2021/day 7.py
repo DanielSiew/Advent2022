@@ -37,8 +37,12 @@ def part_two():
         fuel_used = 0
         for crab in crabs:
             difference = abs(crab - value)
-            for magnitude in range(1, difference + 1):
-                fuel_used += magnitude
+
+            # HAHA i got an idea to use sum of AP from a dream LOL
+            fuel_used += (difference * (1 + difference)) / 2
+            
+#             for magnitude in range(1, difference + 1):
+#                 fuel_used += magnitude
 
         all_fuel_used.append(fuel_used)
 
