@@ -57,7 +57,7 @@ def part_two(file):
     for num in lst:
         stones[num] += 1
 
-    for _ in range(25):
+    for _ in range(75):
         nxt_stones = defaultdict(lambda: 0)
         for num, count in stones.items():
             if num not in seen:
